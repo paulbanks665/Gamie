@@ -1,0 +1,14 @@
+{
+  "name": "gamie",
+  "version": "1.0.0",
+  "description": "a sandbox",
+  "main": "gamie.js",
+  "scripts": {
+    "test": "test",
+    "start": "node gamie.js"
+  },
+  "author": "paul banks",
+  "dependencies": {
+    "hapi": "^16.1.0"
+  }
+}
