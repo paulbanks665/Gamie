@@ -16,5 +16,5 @@ server.start((err) => {
     if(err){
         throw err;
     }
-    console.log('SANDBOX RUNNING AT : ', server.info.uri);
+  console.log('SANDBOX RUNNING AT : ', server.info.uri);
 });
