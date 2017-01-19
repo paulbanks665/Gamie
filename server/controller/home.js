@@ -11,7 +11,7 @@ module.exports = {
                 }
             };
             console.log("RETURNING");
-            reply.view('home/home2', data);
+            reply.view('home/home', data);
         }
     }
 };

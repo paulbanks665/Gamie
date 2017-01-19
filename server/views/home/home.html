@@ -1,8 +1,7 @@
-{% extends '../layouts/default.html' %}
+{% extends "../layouts/default.html" %}
 
-{% block title %} {{'page.title'}} {% endbolck %}
+{% block title %} {{page.title}} {% endblock %}
 
 {% block page-content %}
-<h1>HOME</h1>
-<p>{{'page.message'}}</p>
-{% endbolck %}
+    <h1>{{page.message}}</h1>
+{% endblock %}
