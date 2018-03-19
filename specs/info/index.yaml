@@ -1,0 +1,3 @@
+version: '0.1'
+title: Gamie
+description: a test bed for swagger hapi api generation

@@ -9,6 +9,8 @@
   },
   "author": "paul banks",
   "dependencies": {
-    "hapi": "^8.0.0"
+    "hapi": "^17.2.3",
+    "hapi-openapi": "^1.0.1",
+    "lodash": "^4.17.2"
   }
 }
