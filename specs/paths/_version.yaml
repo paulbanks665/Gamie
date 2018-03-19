@@ -1,0 +1,6 @@
+get:
+  responses:
+    200:
+      description: Current name and version
+      schema:
+        $ref: '../definitions/index.yaml#/Service'

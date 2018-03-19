@@ -1,0 +1,15 @@
+type: object
+required:
+  - name
+  - version
+  - description
+properties:
+  name:
+    type: string
+    default: Gamie
+  version:
+    type: string
+    example: 1.0.0
+  description:
+    type: string
+    example: An API to play with

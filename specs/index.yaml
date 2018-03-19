@@ -1,0 +1,14 @@
+---
+swagger: '2.0'
+
+info:
+  $ref: ./info/index.yaml
+
+schemes:
+  - http
+
+paths:
+  $ref: ./paths/index.yaml
+
+definitions:
+  $ref: ./definitions/index.yaml
