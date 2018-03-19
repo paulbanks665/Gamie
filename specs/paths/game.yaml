@@ -3,14 +3,14 @@ get:
     200:
       description: retrieves game data
       schema:
-        $ref: './../../definitions/index.yaml#/Game'
+        $ref: './../definitions/index.yaml#/Game'
     404:
       description: Not Found Error
       schema:
-        $ref: './../../definitions/index.yaml#/NotFoundError'
+        $ref: './../definitions/index.yaml#/NotFoundError'
     500:
       description: Internal Server Error
       schema:
-        $ref: './../../definitions/index.yaml#/InternalError'
+        $ref: './../definitions/index.yaml#/InternalError'
   produces:
       - application/json

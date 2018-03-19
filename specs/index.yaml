@@ -2,13 +2,37 @@
 swagger: '2.0'
 
 info:
-  $ref: ./info/index.yaml
+  version: '0.1'
+  title: Gamie
+  description: a test bed for swagger hapi api generation
 
 schemes:
   - http
 
 paths:
-  $ref: ./paths/index.yaml
-
-definitions:
-  $ref: ./definitions/index.yaml
+  /game:
+    get:
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            title: Game
+            type: object
+            required:
+              - name
+              - players
+            properties:
+              id:
+                type: integer
+                example: 14606
+              name:
+                type: string
+                example: Exploding Kittens
+              players:
+                type: integer
+                example: 5
+              type:
+                type: string
+                example: Card
+      produces:
+        - application/json
