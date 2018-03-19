@@ -1,2 +1,2 @@
-run npm install
-then node --harmony-async-await gamie.js
+run: npm install
+then run: node --harmony-async-await gamie.js

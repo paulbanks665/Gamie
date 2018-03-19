@@ -1,2 +1,4 @@
 /_version:
   $ref: ./_version.yaml
+/game:
+  $ref: ./game.yaml

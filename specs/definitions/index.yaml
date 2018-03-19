@@ -1,2 +1,8 @@
 Service:
   $ref: ./service.yaml
+InternalError:
+  $ref: ./internal-error.yaml
+NotFoundError:
+  $ref: ./not-found-error.yaml
+Game:
+  $ref: ./game.yaml

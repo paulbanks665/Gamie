@@ -15,7 +15,10 @@ const init = async () => {
         options: {
             api: Path.join(__dirname, './specs/index.yaml'),
             handlers: Path.join(__dirname, './server/handlers'),
-            docs: {path: '/_specs'}
+            docs: {path: '/_specs'},
+            cors: {
+              origin: ['*']
+            }
         }
     });
     await server.start();

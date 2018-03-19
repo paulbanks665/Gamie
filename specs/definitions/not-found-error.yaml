@@ -1,0 +1,17 @@
+title: NotFoundError
+type: object
+required:
+  - statusCode
+  - error
+  - message
+properties:
+  statusCode:
+    type: number
+    format: int32
+    example: 404
+  error:
+    type: string
+    example: Not Found Error
+  message:
+    type: string
+    example: The item was not found
