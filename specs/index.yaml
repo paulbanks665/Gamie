@@ -48,15 +48,7 @@ paths:
               $ref: '#/definitions/Game'
       produces:
         - application/json
-  /games/{gameId}:
-    get:
-      parameters:
-      - name: gameId
-        in: path
-        description: ID of the Game to return
-        required: true
-        type: integer
-        format: int64
+    post:
       responses:
         200:
           description: retrieves game data
@@ -64,7 +56,9 @@ paths:
             $ref: '#/definitions/Game'
       produces:
         - application/json
-    post:
+
+  /games/{gameId}:
+    get:
       parameters:
       - name: gameId
         in: path
