@@ -8,6 +8,7 @@ info:
 
 schemes:
   - http
+  - https
 
 paths:
   /game:
@@ -36,3 +37,112 @@ paths:
                 example: Card
       produces:
         - application/json
+  /games:
+    get:
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Game'
+      produces:
+        - application/json
+  /games/{gameId}:
+    get:
+      parameters:
+      - name: gameId
+        in: path
+        description: ID of the Game to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            $ref: '#/definitions/Game'
+      produces:
+        - application/json
+    post:
+      parameters:
+      - name: gameId
+        in: path
+        description: ID of the Game to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            $ref: '#/definitions/Game'
+      produces:
+        - application/json
+    put:
+      parameters:
+      - name: gameId
+        in: path
+        description: ID of the Game to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            $ref: '#/definitions/Game'
+      produces:
+        - application/json
+    delete:
+      parameters:
+      - name: gameId
+        in: path
+        description: ID of the Game to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: retrieves game data
+          schema:
+            $ref: '#/definitions/Game'
+      produces:
+        - application/json
+
+securityDefinitions:
+  petstore_auth:
+    type: oauth2
+    authorizationUrl: http://petstore.swagger.io/oauth/dialog
+    flow: implicit
+    scopes:
+      write:pets: modify pets in your account
+      read:pets: read your pets
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+
+definitions:
+  Game:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 14606
+      name:
+        type: string
+        example: Exploding Kittens
+      players:
+        type: integer
+        format: int64
+        example: 5
+      type:
+        type: string
+        example: Card
+        enum:
+        - Card
+        - Minitues
+    xml:
+      name: Gane
