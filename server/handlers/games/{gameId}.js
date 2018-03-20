@@ -15,6 +15,11 @@ module.exports.put = ( request, h ) => {
     if ( !game ) { // Return 404
 
     }
+
+    game.name = request.body.name,
+    game.players = parseInt( request.body.players ),
+    game.type = request.body.type
+
     return game;
 }
 
@@ -23,5 +28,9 @@ module.exports.delete = ( request, h ) => {
     if ( !game ) { // Return 404
         return;
     }
+
+    const index = dataStore.games.indexOf( game );
+    dataStore.games.splice( index, 1 );
+
     return game;
 }
