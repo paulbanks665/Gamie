@@ -18,6 +18,11 @@ const init = async () => {
             docs: {path: '/_specs'}
         }
     });
+
+    await server.register({ 
+        plugin: require('./server/init/plugins/mysql'),
+        options: {}
+    });
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
 };
