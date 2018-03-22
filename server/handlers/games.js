@@ -1,20 +1,30 @@
 'use strict'
 
-const dataStore = require( '../dataStore' );
+const db = require('../resources/mysql');
+const Boom = require('boom');
+
 
 module.exports.get = ( request, h ) => {
-    return dataStore.games;
-}
+    const sql = 'Select * from game' 
+
+    return db.pool().query( sql ).catch( err => {
+      console.log(err);
+    })
+  }
 
 module.exports.post = ( request, h ) => {
     const game = {
-      id: dataStore.games.length + 1,
       name: request.payload.name,
       players: parseInt( request.payload.players ),
       type: request.payload.type
     }
 
-    dataStore.games.push( game );
+    db.pool().query('INSERT INTO game SET ?', game, (error, results, fields) => {
+        if (error) throw error;
+        console.log(results.insertId);
+        game.id = results.insertId;
+      });
+
     return game;
 }
 
