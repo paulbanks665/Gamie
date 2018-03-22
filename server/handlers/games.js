@@ -7,6 +7,7 @@ module.exports.get = ( request, h ) => {
 }
 
 module.exports.post = ( request, h ) => {
+    console.log( "Made it here" );
     const game = {
       id: dataStore.games.length + 1,
       name: request.body.name,
