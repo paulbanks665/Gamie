@@ -104,11 +104,28 @@ paths:
         required: true
         type: integer
         format: int64
-      - in: body
-        name: body
+      - name: Game
+        in: body
+        description: Game payload
         required: true
         schema:
-          $ref: '#/definitions/Game'
+          title: GamePayload
+          type: object
+          required:
+            - name
+            - type
+          properties:
+            name:
+              type: string
+              example: fancy game
+            players:
+              type: integer
+              example: 5
+            type:
+              enum:
+                - Card
+                - Minitues
+              example: Card
       responses:
         200:
           description: retrieves game data
