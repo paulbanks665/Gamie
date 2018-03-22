@@ -19,12 +19,12 @@ module.exports.post = ( request, h ) => {
       type: request.payload.type
     }
 
-    db.pool().query('INSERT INTO game SET ?', game, (error, results, fields) => {
-        if (error) throw error;
-        console.log(results.insertId);
-        game.id = results.insertId;
-      });
-
-    return game;
+    return db.pool().query('INSERT INTO game SET ?', game).then( (rows) => {
+            console.log(rows.insertId);
+            game.id = rows.insertId;
+            return game;
+        } ).catch( (error) => {
+            if (error) throw error;
+        });
 }
 
