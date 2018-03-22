@@ -7,15 +7,15 @@ module.exports.get = ( request, h ) => {
 }
 
 module.exports.post = ( request, h ) => {
-    console.log( "Made it here" );
+    console.log( request );
     const game = {
       id: dataStore.games.length + 1,
-      name: request.body.name,
-      players: parseInt( request.body.players ),
-      type: request.body.type
+      name: request.payload.name,
+      players: parseInt( request.payload.players ),
+      type: request.payload.type
     }
 
-    dataStore.push( game );
+    dataStore.games.push( game );
     return game;
 }
 
