@@ -11,6 +11,8 @@
   "dependencies": {
     "hapi": "^17.2.3",
     "hapi-openapi": "^1.0.1",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "promise-mysql": "^3.0.1",
+    "boom": "^4.2.0"
   }
 }

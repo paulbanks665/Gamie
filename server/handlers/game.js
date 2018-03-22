@@ -1,5 +1,8 @@
 'use strict'
 
+const mysql = require('../resources/mysql');
+const Boom = require('boom');
+
 var game = {
   id: 14606,
   name: "Exploding Kittens",
@@ -7,6 +10,10 @@ var game = {
   type: "Card"
 }
 
-module.exports.get = (request, h) => {
-    return game;
+module.exports.get = ( request, h ) => {
+  let sql = 'Select * from game' 
+
+  return mysql.pool().query(sql).catch( err => {
+    console.log(err);
+  })
 }
