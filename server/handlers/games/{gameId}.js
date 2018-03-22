@@ -16,9 +16,9 @@ module.exports.put = ( request, h ) => {
         return h.response(`error : Game with Id of ${request.params.gameId} not found in store.`).code(404);
     }
 
-    game.name = request.body.name,
-    game.players = parseInt( request.body.players ),
-    game.type = request.body.type
+    game.name = request.payload.name,
+    game.players = parseInt( request.payload.players ),
+    game.type = request.payload.type
 
     return game;
 }
