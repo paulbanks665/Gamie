@@ -64,7 +64,7 @@ paths:
               name:
                 type: string
                 example: fancy game
-              players
+              players:
                 type: integer
                 example: 5
               type:
